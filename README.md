@@ -130,14 +130,52 @@ This action will unveil log data, including usernames if relevant, and IP addres
 
 ![Screenshot 2023-11-30 at 9 29 52 PM copy](https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/c41ea16e-0af3-4a20-a773-291f0deb45b0)
 
-Upon further investigation, it revealed that the IP address 79.137.202.92 is associated with Tor exit nodes and potentially malicious activities.
+Upon further investigation, it was revealed that the IP address 79.137.202.92 is associated with Tor exit nodes and potentially malicious activities.
 
 <img width="607" alt="AbuselPDB » 79 137 202 92" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/ef839dd7-c08f-48ef-8d8a-62d214ee649d">
 
 By employing the query provided below, we can observe the user's Sign-in patterns mentioned in the incident.
 
-SigninLogs
-｜ where UserPrincipaiName ==
-"ShyGuy@angeloqmartingmail.onmicrosoft.com"
+SigninLogs<br>
+｜ where UserPrincipaiName == "ShyGuy@angeloqmartingmail.onmicrosoft.com"
 
 <img width="999" alt="Screenshot 2023-11-30 at 9 45 09 PM" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/0eb79b98-2054-4f73-a6f6-44ca8f8e5900">
+
+Take note of that the location field, where the country transitioned from US to DE within a matter of seconds.
+
+![Screenshot 2023-11-30 at 9 47 47 PM copy](https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/afebd439-2d1c-4b56-8fc9-1020c2d7601d)
+
+For a deeper investigation, navigate to Microsoft Sentinel > Incidents > Threat management > Entity behavior. This feature allows you to search for IPs, devices, or users to examine their complete activity, including actions like deletion or disabling of resources. This exploration will aid in identifying any relevant patterns or anomalies.
+
+![Screenshot 2023-11-30 at 10 12 53 PM copy](https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/202d032b-f3da-42c4-ae7d-9196e88e60ba)
+
+<img width="403" alt="Screenshot 2023-12-11 at 12 47 37 PM" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/ca24210e-629e-4b8e-bed3-ec287a51a687">
+
+## Remediation
+
+
+
+1. Quarantine:
+	- Immediately disable the compormised account "ShyGuy" by navigating to Microsoft Entra > Manage > Users > Click on user > Edit > Accout Status > Disable “Account enabled”
+ - <img width="889" alt="ShyGuy" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/07ba61ce-6f6e-482b-8fe9-725c75ae6be5">
+3. Review User Permissions:
+	- Conduct a thorough review of user accounts and permissions across the network and environment, particularly within the administrator's group. Remove unauthorized access and limit privileges to necessary functionalities.
+5. Forensic Analysis:
+	- Perform in-depth forensic analysis on the compromised host and associated network logs to understand the extent of the intrusion and identify potential points of entry.
+6. Patch and Update Systems:
+	- Ensure that all systems, including software and applications, are up-to-date with the latest security patches and configurations to mitigate known vulnerabilities.
+7. Re-enable resources:
+	- Re-enable any resources that were disableed. For example navigate to og Anltics workspace > select instance > monitor > diagnotic setting > +add dianogostic setting and microsoft sentinel > configuration settings > settings > auditing and health monitoring
+ - <img width="883" alt="Diagnostic setting" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/2982e8d8-4141-48fd-bd77-2463f8b12fe4">
+- <img width="871" alt="Microsoft Sentinel  Settings" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/17fffd1d-b711-4f6d-a7aa-62d1ed3d3f73">
+8. Security Awareness Training:
+	- Conduct security awareness training sessions for employees to educate them on identifying and reporting suspicious activities or security threats.
+9. Incident Response Plan:
+	- Review and update the incident response plan to include steps for handling similar security incidents promptly in the future.
+10. Continuous Monitoring and Analysis:
+	- Implement robust monitoring tools and practices to continuously analyze network traffic for any abnormal activities or potential threats.
+11. Close Incident:
+- Following the implementation of remediation measures, proceed to close the incident(s) and add comments.
+<img width="324" alt="Actions" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/3f920b4f-5480-4f58-a738-a2b1304838c8">
+
+These remediation actions should be carried out promptly and in coordination with the organization's IT security team to effectively mitigate the risks posed by the identified security breach.
