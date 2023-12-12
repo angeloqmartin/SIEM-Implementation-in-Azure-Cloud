@@ -22,28 +22,37 @@ Follow these steps to proceed with the deployment:
 <br>
 <br>
 4. Configuration Setup: Review the detailed instructions provided in the repository's documentation for configuring Microsoft Sentinel to suit your specific needs.
+<br>
+<br>
 5. Review + create
 
 ## View Logged Activity
 <img width="962" alt="Screenshot 2023-11-29 at 6 27 16 PM" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/816d1437-84e7-4d9b-93ff-726238ae955f"><br>
 
-- Access the logs section from your overview page. Here, you can execute queries using KQL to view logged activities, tracking details such as the action's performer (or Caller) and other essential properties crucial for investigation purposes.
+1. Access the logs section from your overview page. Here, you can execute queries using KQL to view logged activities, tracking details such as the action's performer (or Caller), and other essential properties crucial for investigation purposes.
 
 <img width="955" alt="Microsoft Sentinel  Logs" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/3c0c9af5-618b-46d4-9f68-d7f8ec2ecae9">
 
-- AADNonInteractiveUserSignInLogs query which checks interactive user log on, provides information on auth requirements, client usage, and location details 
-
+<br>
+<br>
+2. "AADNonInteractiveUserSignInLogs" query which checks interactive user log on, provides information on auth requirements, client usage, and location details 
+<br>
+<br>
+	
 ![Microsoft Sentinel  Logs](https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/4393da27-8291-4b5d-b91b-4c01e5424607)
 
 ## Analytics Setting
 
 <img width="964" alt="Microsoft Sentinel  Analytics" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/d15502d0-385a-43a7-996e-d8281cca1ff7">
-
-Within the Microsoft Sentinel Analytics settings, it's important to monitor high-security threats like file deletions. Effective management involves reviewing and adjusting settings for anomalies to minimize the occurrence of false positives.
+<br>
+<br>
+1. Within the Microsoft Sentinel Analytics settings, it's important to monitor high-security threats like file deletions. Effective management involves reviewing and adjusting settings for anomalies to minimize the occurrence of false positives.
+<br>
+<br>
 
 ![Microsoft Sentinel  Analytics](https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/b7f3b457-db5e-437f-878a-498c859b6fb6)
 
-Engaging with User and Entity Behavior Analytics involves activating Playbook - AI (Artificial Intelligence) within the SIEM to detect and notify about atypical behavior (Microsoft Sentinel's UEBA).
+2. Engaging with User and Entity Behavior Analytics involves activating Playbook - AI (Artificial Intelligence) within the SIEM to detect and notify about atypical behavior (Microsoft Sentinel's UEBA).
 
 <img width="902" alt="Screenshot 2023-11-29 at 10 30 29 PM" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/a0fd4333-fdc7-45e4-ba93-bed7d03c21d8">
 
@@ -54,18 +63,23 @@ Engaging with User and Entity Behavior Analytics involves activating Playbook - 
 Watchlist allows data collection from external sources for correlation with events in the Microsoft Sentinel environment. Once established, utilize these watchlists in your search and detection processes.
 
 <img width="1094" alt="Screenshot 2023-12-10 at 9 24 15 PM" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/8dc5e943-28aa-4aec-94b4-5fd130e28f43">
-
-To add a watchlist select "New"
-
+<br>
+<br>
+1. To add a watchlist select "New"
+<br>
+<br>
 <img width="623" alt="Screenshot 2023-12-10 at 9 32 48 PM" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/ca6017e0-96be-4c6b-a84f-bfb1a7985438">
-
-In this project, a CSV file was utilized to create a watchlist that verifies all outgoing Tor nodes' IP addresses.
+<br>
+<br>
+2. In this project, a CSV file was utilized to create a watchlist that verifies all outgoing Tor nodes' IP addresses.
+<br>
+<br>
 
 ![Watchlist wizard copy](https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/b68d9376-8bf7-4ad1-bd01-a9dc1c4f6516)
 
 <img width="1215" alt="Screenshot 2023-11-29 at 11 03 27 PM" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/de1130e0-57a8-4494-9117-07895a959788">
 
-Make a Call to the watch with KQL with “_GetWatchlist('Tor-IP-Addr’)”
+3. Make a Call to the watch with KQL with “_GetWatchlist('Tor-IP-Addr’)”
 
 <img width="925" alt="Screenshot 2023-11-29 at 11 07 13 PM" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/a9c44d40-9873-4e00-bb95-e4771b85a12d">
 
@@ -73,19 +87,19 @@ Make a Call to the watch with KQL with “_GetWatchlist('Tor-IP-Addr’)”
 
 To create Analysis Detection Rules for Cybersecurity Threats navigate to Microsoft Sentinel > Configuration > Analytics > Create > Schedule Query Rule
 
-Analytics rule wizard - Create a new Scheduled rule
+1. Analytics rule wizard - Create a new Scheduled rule
 
 <img width="852" alt="Analytics rule wizard - Create a new Scheduled rule" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/273977d9-3eb0-46c9-bf38-6e9fc23d5e75">
 
-Utilizing KQL to specify the date range for the following function that retrieves a list of IP addresses and stores it as a variable named TorNodes:
+2. Utilizing KQL to specify the date range for the following function that retrieves a list of IP addresses and stores it as a variable named TorNodes:
 
 ![I project TorIP = IpAddress); copy](https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/02f51624-7957-4ab9-9e3a-e5fd5ee6f097)
 
-Review rules and create:
+3. Review rules and create:
 
 <img width="875" alt="Screenshot 2023-11-30 at 12 06 25 PM" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/52608d01-bc86-4595-9e30-75e6a22a3c9e">
 
- The new rule will appear under the Analytics section 
+4. The new rule will appear under the Analytics section 
 
  ![Microsoft Sentinel  Analytics copy](https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/bbe2ffc0-13c2-4ce7-bb13-d7f3f4bfe2d9)
 
@@ -175,7 +189,7 @@ For a deeper investigation, navigate to Microsoft Sentinel > Incidents > Threat 
 10. Continuous Monitoring and Analysis:
 	- Implement robust monitoring tools and practices to continuously analyze network traffic for any abnormal activities or potential threats.
 11. Close Incident:
-- Following the implementation of remediation measures, proceed to close the incident(s) and add comments.
+	- Following the implementation of remediation measures, proceed to close the incident(s) and add comments.
 <img width="324" alt="Actions" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/3f920b4f-5480-4f58-a738-a2b1304838c8">
 
 These remediation actions should be carried out promptly and in coordination with the organization's IT security team to effectively mitigate the risks posed by the identified security breach.
