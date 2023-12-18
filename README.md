@@ -1,25 +1,3 @@
- 
-
-<img width="838" alt="Screenshot 2023-11-30 at 1 25 41 PM" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/9f4e358f-36d7-42e9-a883-5321a4956105">
-
-![Password copy](https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/f1225476-95ea-4545-b3f4-a833e9d6afab)
-
-<img width="986" alt="Diagnostic setting" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/a1e05929-98b9-48ce-bf4b-a060c87f2a42">
-
-![Screenshot 2023-11-30 at 9 47 47 PM copy](https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/afebd439-2d1c-4b56-8fc9-1020c2d7601d)
-
-![Screenshot 2023-11-30 at 10 12 53 PM copy](https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/202d032b-f3da-42c4-ae7d-9196e88e60ba)
-
-<img width="403" alt="Screenshot 2023-12-11 at 12 47 37 PM" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/ca24210e-629e-4b8e-bed3-ec287a51a687">
-
- <img width="889" alt="ShyGuy" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/07ba61ce-6f6e-482b-8fe9-725c75ae6be5">
-
- <img width="883" alt="Diagnostic setting" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/2982e8d8-4141-48fd-bd77-2463f8b12fe4">
-
-<img width="871" alt="Microsoft Sentinel  Settings" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/17fffd1d-b711-4f6d-a7aa-62d1ed3d3f73">
-
-<img width="324" alt="Actions" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/3f920b4f-5480-4f58-a738-a2b1304838c8"
-
 # SIEM Implementation in Azure Cloud
 
 The objective of this project is to deploy a Microsoft SIEM (Security Information and Event Management) within the Azure Cloud environment. The focus is on enhancing cybersecurity through advanced threat detection capabilities and customized configurations. This involves deploying Microsoft Sentinel and integrating various methods, such as custom KQL (Kusto Query Language) analytics rules, to strengthen defenses against emerging threats.
@@ -101,29 +79,44 @@ ConditionalAccessPolicies
 
 ## Incident Handling
 
-- Observe incidents in Microsoft Sentinel's Incidents section.
-- Allocate incidents to specific users, define severity, and manage them effectively.
+In the context of incident handling within this project, the following actions are simulated to understand and respond to potential threats effectively:
 
-![Microsoft Sentinel  Analytics copy](https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/bbe2ffc0-13c2-4ce7-bb13-d7f3f4bfe2d9)
+- **User Account Creation for SIEM Investigation:** Generating logs by creating a User Account in Azure specifically for SIEM investigation purposes.
+  
+- **Login Using the Tor Browser:** After setting the necessary rights, permissions, and roles, logging into the user account via the Tor browser to simulate threat actor actions.
+  
+- **Establishing Persistence:** Emulating a threat actor's actions by initiating persistence, beginning with changing the user account's password.
+  
+- **Resource Manipulation:** Attempting to disable and create resources within the Resource group /SEC-Monitor-Project/Diagnostic setting and navigating through Microsoft Sentinel settings to modify configurations.
+  
+- **Observing Incidents:** Observing and analyzing incidents within Microsoft Sentinel's Incidents section to understand the nature and severity of potential threats.
+  
+- **Incident Allocation and Management:** Allocating incidents to specific users, defining their severity, and managing them effectively using the Microsoft Sentinel interface.
 
-<img width="949" alt="Screenshot 2023-11-30 at 8 24 29 PM" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/68984d50-c709-4b0f-9cc8-ca6a5cf3d3ef">
-
-![Screenshot 2023-11-30 at 8 56 01 PM copy](https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/fad62461-5f76-4d3e-b31c-147443217fce)
+![Screenshot 2023-11-30 at 8 24 29 PM copy](https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/fec91045-5bc8-42c9-8457-595602c46101)
 
 ## Investigation of Cybersecurity Incidents
 
-1. Explore detailed incident pages to view entities, descriptions, events, and related information.
-2. Investigate further using log data to identify patterns or anomalies.
+During the investigation of cybersecurity incidents within Microsoft Sentinel, the following actions are conducted:
+
+- **Observation of Incidents:** Monitoring and examining incidents recorded in Microsoft Sentinel's Incidents section to identify potential threats.
+  
+- **Incident Allocation and Severity Management:** Allocating incidents to specific users, defining their severity, and effectively managing them to ensure a prompt and organized response.
+  
+- **Detailed Incident Examination:** Viewing the "full details" of incidents to access information regarding Entities (users, IP addresses), Description, events, timestamps, alerts, IPs, and additional crucial data.
+  
+- **Checking Access IP for Malicious Activity:** Analyzing the accessed IP to verify potential associations with malicious activities. For instance, investigating if the IP address is linked to any malicious behavior or known Tor exit nodes.
+  
+- **Identification of Suspicious IPs:** Identifying suspicious IPs by examining specific details. For example, discovering that the access IP is 79.137.202.92, which could be linked to suspicious activities. Using external resources like “https://www.abuseipdb.com” to ascertain if the IP is associated with Tor exit nodes or potentially malicious behavior.
 
 <img width="1440" alt="Screenshot 2023-11-30 at 9 24 27 PM" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/12a494bd-086f-4768-bc10-39d72d21359c">
 
-<img width="250" alt="Screenshot 2023-12-10 at 11 00 59 PM" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/4af28be7-d162-467b-99c0-d5526d966e61">
-
-![Screenshot 2023-11-30 at 9 29 52 PM copy](https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/c41ea16e-0af3-4a20-a773-291f0deb45b0)
-
-<img width="607" alt="AbuselPDB » 79 137 202 92" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/ef839dd7-c08f-48ef-8d8a-62d214ee649d">
-
-<img width="999" alt="Screenshot 2023-11-30 at 9 45 09 PM" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/0eb79b98-2054-4f73-a6f6-44ca8f8e5900">
+Edit the Query to examine the user's Sign-in behavior. Note the rapid country transition in the location field from US to DE within seconds.
+```kusto
+SigninLogs
+| where UserPrincipalName == “ShyGuy@angeloqmartingmail.onmicrosoft.com”
+```
+![Screenshot 2023-11-30 at 9 47 47 PM copy](https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/afebd439-2d1c-4b56-8fc9-1020c2d7601d)
 
 ## Remediation Steps
 
@@ -138,5 +131,7 @@ Take prompt actions for remediation in case of security breaches:
 7. **Incident Response Plan:** Review and update the incident response plan to include steps for handling similar security incidents promptly in the future.
 10. **Continuous Monitoring and Analysis:** Implement robust monitoring tools and practices to continuously analyze network traffic for abnormal activities or potential threats.
 11. **Close Incident:** Following the implementation of remediation measures, proceed to close the incident(s) and add comments.
+
+<img width="324" alt="Actions" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/3f920b4f-5480-4f58-a738-a2b1304838c8">
 
 These remediation actions should be carried out promptly and in coordination with the organization's IT security team to effectively mitigate the risks posed by the identified security breach.
