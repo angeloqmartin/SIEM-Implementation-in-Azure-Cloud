@@ -20,7 +20,7 @@ AzureActivity - returns the Activity log data
 AzureActivity
 ```
 
-This query checks interactive user logon and provides information on auth requirements, client usage, and location details 
+This query checks interactive user logon and provides information on auth requirements, client usage, and location.
 ```kusto
 AADNonInteractiveUserSignInLogs
 ```
@@ -54,6 +54,9 @@ _GetWatchlist('Tor-IP-Addr’)
 Create scheduled query rules using KQL to specify criteria for threat detection.
 
 <img width="852" alt="Analytics rule wizard - Create a new Scheduled rule" src="https://github.com/angeloqmartin/SIEM-Implementation-in-Azure-Cloud/assets/37564935/273977d9-3eb0-46c9-bf38-6e9fc23d5e75">
+
+<br>
+<br>
 
 This query specifies the data to be sought, retrieves a list of IP addresses, along with other associated fields, and stores it as a variable named TorNodes.
 ```kusto
